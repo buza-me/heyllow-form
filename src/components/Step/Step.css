@@ -8,10 +8,15 @@
   background-color: var(--dark-blue-color);
   border-radius: 50%;
   cursor: pointer;
+  transition: filter var(--transition-time);
 }
 
 .step__container.active {
   background-color: var(--crimson-color);
+}
+
+.step__container:hover {
+  filter: var(--brightness-filter);
 }
 
 .step__content {
