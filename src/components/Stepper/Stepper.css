@@ -1,0 +1,26 @@
+.stepper__container {
+  width: 100%;
+  padding: 20px 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.stepper__step-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.stepper__step-container:last-child {
+  flex: 0;
+  display: flex;
+}
+
+.stepper__separator {
+  flex: 1;
+  height: 2px;
+  background-color: var(--grey-color);
+  opacity: 0.2;
+  margin: 0 8px;
+}
