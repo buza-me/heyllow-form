@@ -13,6 +13,11 @@
   --text-dim-color: #a7a7a7;
   --text-dark-color: #636363;
   --text-darker-color: #333333;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --brightness-filter: brightness(0.6);
+  --transition-time: 0.2s;
   --main-gradient-background: linear-gradient(
     228.75deg,
     #216190 19.65%,
