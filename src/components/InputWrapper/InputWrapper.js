@@ -13,11 +13,12 @@ const InputWrapperBase = ({ renderChildren, validators, required }, ref) => {
 
   useImperativeHandle(ref, () => ({
     getMeta: () => {
-      setMeta({
+      const newMeta = {
         ...meta,
         isValid: validate(meta.value),
-      });
-      return meta;
+      };
+      setMeta(newMeta);
+      return newMeta;
     },
     reset() {
       setMeta({
@@ -30,7 +31,7 @@ const InputWrapperBase = ({ renderChildren, validators, required }, ref) => {
   const validate = useCallback(
     (value) => {
       return (
-        (!required || value) &&
+        (!required || !!value) &&
         (!validators ||
           !validators.length ||
           validators.some((validator) => validator(value)))
