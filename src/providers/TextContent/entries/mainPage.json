@@ -11,6 +11,6 @@
   "mainPage.attached.file": "file attached",
   "mainPage.attached.files": "files attached",
   "mainPage.button.submit": "Submit",
-  "mainPage.errorMessage.required": "This field in required",
+  "mainPage.errorMessage.required": "This field is required",
   "mainPage.errorMessage.numInput": "Please enter number from 1 to 99"
 }

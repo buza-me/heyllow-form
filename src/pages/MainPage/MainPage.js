@@ -1,16 +1,19 @@
 import "./MainPage.css";
-import React, { useContext, useState, useMemo, useRef } from "react";
+import React, { useContext, useState, useMemo } from "react";
 import { TextContentContext } from "../../providers";
 import { Stepper } from "../../components";
 import { MainPageForm } from "../../components";
 
 export const MainPage = () => {
   const { getText } = useContext(TextContentContext);
-  const steps = useRef([
-    { content: null },
-    { content: null },
-    { content: <MainPageForm /> },
-  ]).current;
+  const steps = useMemo(
+    () => [
+      { content: <h2>Ola!</h2> },
+      { content: <h2>Hey!</h2> },
+      { content: <MainPageForm /> },
+    ],
+    []
+  );
   const [currentStep, setCurrentStep] = useState(steps[steps.length - 1]);
 
   const header = useMemo(
@@ -27,6 +30,7 @@ export const MainPage = () => {
         steps={steps}
         activeStep={currentStep}
         onStepChange={setCurrentStep}
+        className="main-page__stepper"
       />
     ),
     [steps, currentStep]
@@ -36,7 +40,9 @@ export const MainPage = () => {
       {header}
       <main className="main-page__content">
         {stepper}
-        {currentStep && currentStep.content}
+        <div className="main-page__step-content">
+          {currentStep && currentStep.content}
+        </div>
       </main>
     </section>
   );

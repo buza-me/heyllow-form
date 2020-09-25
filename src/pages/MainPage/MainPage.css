@@ -10,8 +10,46 @@
 .main-page__container_header {
   color: var(--text-light-color);
   font-size: 2.86rem;
+  text-align: center;
 }
 
 .main-page__content {
-  width: 50%;
+  margin-top: 3px;
+  width: 608px;
+}
+
+.main-page__stepper {
+  padding: 20px 49px;
+}
+
+.main-page__step-content {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  padding: 4rem;
+  margin: 12px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .main-page__content {
+    margin-top: 2rem;
+    width: 90%;
+  }
+
+  .main-page__stepper {
+    padding: 0.5rem 1rem;
+  }
+
+  .main-page__step-content {
+    margin-top: 0.5rem;
+  }
+
+  .main-page__step-content {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .main-page__step-content {
+    padding: 1.5rem;
+  }
 }

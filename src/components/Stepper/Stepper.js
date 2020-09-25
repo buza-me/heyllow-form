@@ -2,7 +2,13 @@ import "./Stepper.css";
 import React from "react";
 import { Step } from "../Step/Step";
 
-export const Stepper = ({ steps, activeStep, onStepChange }) => {
+export const Stepper = ({
+  steps,
+  activeStep,
+  onStepChange,
+  className = "",
+  id = "",
+}) => {
   const renderStep = (step, index, isActive) => (
     <Step onClick={() => onStepChange(step)} isActive={isActive}>
       {index + 1}
@@ -19,5 +25,9 @@ export const Stepper = ({ steps, activeStep, onStepChange }) => {
       </li>
     ));
   };
-  return <ul className="stepper__container">{renderSteps()}</ul>;
+  return (
+    <ul className={`stepper__container ${className}`} id={id}>
+      {renderSteps()}
+    </ul>
+  );
 };

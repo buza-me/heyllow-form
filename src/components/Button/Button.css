@@ -12,3 +12,10 @@
 .button__container:hover {
   filter: var(--brightness-filter);
 }
+
+@media screen and (max-width: 415px) {
+  .button__container {
+    font-size: var(--font-size-normal);
+    padding: var(--font-size-normal) calc(var(--font-size-normal) * 2.5);
+  }
+}

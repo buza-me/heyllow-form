@@ -1,6 +1,4 @@
 .stepper__container {
-  width: 100%;
-  padding: 20px 2px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;

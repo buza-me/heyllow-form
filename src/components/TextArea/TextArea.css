@@ -1,0 +1,23 @@
+.textarea__content {
+  background-color: var(--input-background-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-large);
+  padding: var(--font-size-large);
+  border: 1px solid transparent;
+  resize: none;
+}
+
+.textarea__content.error {
+  border-color: var(--red-color);
+}
+
+.textarea__content::placeholder {
+  font-family: var(--font-family);
+}
+
+@media screen and (max-width: 415px) {
+  .textarea__content {
+    font-size: var(--font-size-normal);
+    padding: var(--font-size-normal);
+  }
+}
