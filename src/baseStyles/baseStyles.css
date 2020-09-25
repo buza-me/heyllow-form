@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,400&display=swap");
 
 :root * {
   margin: 0;
@@ -6,6 +6,10 @@
   list-style-type: none;
   text-decoration: none;
   box-sizing: border-box;
+}
+
+:root *:focus {
+  outline: 2px solid var(--text-darker-color);
 }
 
 body {
