@@ -116,22 +116,32 @@ export const MainPageForm = ({
     fileInput: {
       ref: useRef(null),
       validators: [],
-      renderChildren: ({ onChange }) => (
-        <FileInput
-          id="main-page-form__file-input"
-          onChange={(e) => onChange(e.currentTarget.files)}
-          label={getText("mainPage.inputTitle.fileInput")}
-        />
-      ),
+      childRefs: {
+        fileInputRef: useRef(null),
+      },
+      renderChildren: ({ onChange, getRefs }) => {
+        const { fileInputRef } = getRefs();
+        return (
+          <FileInput
+            ref={fileInputRef}
+            id="main-page-form__file-input"
+            onChange={(e) => onChange(e.currentTarget.files)}
+            label={getText("mainPage.inputTitle.fileInput")}
+          />
+        );
+      },
     },
   };
 
   const renderInput = (name) => {
-    const { ref, validators, renderChildren, required } = formModel[name];
+    const { ref, validators, renderChildren, required, childRefs } = formModel[
+      name
+    ];
     return (
       <InputWrapper
         ref={ref}
         validators={validators}
+        childRefs={childRefs}
         renderChildren={renderChildren}
         required={required}
       />

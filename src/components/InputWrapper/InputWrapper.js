@@ -5,7 +5,10 @@ import React, {
   useCallback,
 } from "react";
 
-const InputWrapperBase = ({ renderChildren, validators, required }, ref) => {
+const InputWrapperBase = (
+  { renderChildren, validators, required, childRefs = [] },
+  ref
+) => {
   const [meta, setMeta] = useState({
     value: "",
     isValid: true,
@@ -20,11 +23,12 @@ const InputWrapperBase = ({ renderChildren, validators, required }, ref) => {
       setMeta(newMeta);
       return newMeta;
     },
-    reset() {
+    reset: () => {
       setMeta({
         value: "",
         isValid: true,
       });
+      Object.values(childRefs).forEach((ref) => ref.current.reset());
     },
   }));
 
@@ -62,6 +66,7 @@ const InputWrapperBase = ({ renderChildren, validators, required }, ref) => {
   const children = renderChildren({
     onChange: changeListener,
     onBlur: blurListener,
+    getRefs: () => childRefs,
     meta,
   });
 
