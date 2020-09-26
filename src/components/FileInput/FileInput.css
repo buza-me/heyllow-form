@@ -1,0 +1,37 @@
+.file-input__base {
+  display: none;
+}
+
+.file-input__container {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  background-color: var(--input-background-color);
+  border-radius: var(--large-border-radius);
+  border: 1px solid var(--text-darker-color);
+  color: var(--text-darker-color);
+  padding: 1rem;
+}
+
+.file-input__button {
+  display: flex;
+  background: none;
+}
+
+.file-input__count_content {
+  color: var(--text-dim-color);
+}
+
+.file-input__title_container,
+.file-input__count_container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.file-input__title_content,
+.file-input__count_content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

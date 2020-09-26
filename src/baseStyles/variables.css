@@ -1,0 +1,30 @@
+:root {
+  --border-radius: 8px;
+  --large-border-radius: 10px;
+  --font-family: "Open Sans", sans-serif;
+  --font-size-base: 14px;
+  --font-size-normal: 1rem;
+  --font-size-small: 0.86rem;
+  --font-size-extra-small: 0.7rem;
+  --font-size-large: 1.14rem;
+  --white-color: #ffffff;
+  --grey-color: #e8e8e8;
+  --red-color: #f15557;
+  --crimson-color: #da3f5b;
+  --dark-blue-color: #1e34a5;
+  --text-light-color: #ffffff;
+  --text-dim-color: #a7a7a7;
+  --text-dark-color: #636363;
+  --text-darker-color: #333333;
+  --font-weight-regular: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --brightness-filter: brightness(0.6);
+  --transition-time: 0.2s;
+  --input-background-color: #f9f9f9;
+  --main-gradient-background: linear-gradient(
+    228.75deg,
+    #216190 19.65%,
+    #0834d0 81.25%
+  );
+}
