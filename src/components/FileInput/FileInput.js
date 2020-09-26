@@ -1,19 +1,29 @@
 import "./FileInput.css";
-import React, { useRef, useContext, useCallback, useState } from "react";
+import React, {
+  useContext,
+  useCallback,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+} from "react";
 import { FolderIcon } from "..";
 import { TextContentContext } from "../../providers";
 
-export const FileInput = ({
-  accept,
-  multiple,
-  required,
-  id = "",
-  className = "",
-  label = "",
-  tabIndex = "0",
-  onChange = () => null,
-}) => {
-  const input = useRef(0);
+const FileInputBase = (
+  {
+    accept,
+    multiple,
+    required,
+    id = "",
+    className = "",
+    label = "",
+    tabIndex = "0",
+    onChange = () => null,
+  },
+  ref
+) => {
+  const inputRef = useRef(null);
   const { getText } = useContext(TextContentContext);
   const [value, setValue] = useState([]);
   const onInputChange = useCallback(
@@ -23,17 +33,27 @@ export const FileInput = ({
     },
     [onChange]
   );
+  useImperativeHandle(ref, () => ({
+    reset: () => {
+      setValue([]);
+      inputRef.current.files = null;
+    },
+  }));
   const countMessage = `${value.length} ${
     value.length === 1
       ? getText("mainPage.attached.file")
       : getText("mainPage.attached.files")
   }`;
   return (
-    <div className={`file-input__container ${className}`} tabIndex={tabIndex}>
+    <div
+      className={`file-input__container ${className}`}
+      tabIndex={tabIndex}
+      ref={ref}
+    >
       <button
         type="button"
         className="file-input__button"
-        onClick={() => input.current.click()}
+        onClick={() => inputRef.current.click()}
       >
         <FolderIcon />
       </button>
@@ -44,7 +64,7 @@ export const FileInput = ({
         <span className="file-input__count_content">{countMessage}</span>
       </span>
       <input
-        ref={input}
+        ref={inputRef}
         type="file"
         multiple={multiple}
         required={required}
@@ -56,3 +76,5 @@ export const FileInput = ({
     </div>
   );
 };
+
+export const FileInput = forwardRef(FileInputBase);
