@@ -31,6 +31,7 @@ export const FileInput = ({
   return (
     <div className={`file-input__container ${className}`} tabIndex={tabIndex}>
       <button
+        type="button"
         className="file-input__button"
         onClick={() => input.current.click()}
       >

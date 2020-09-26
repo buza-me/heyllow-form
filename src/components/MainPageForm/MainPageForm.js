@@ -12,7 +12,7 @@ import {
 } from "..";
 
 export const MainPageForm = ({
-  onSubmit = () => null,
+  onSubmit = (value) => console.log(value),
   className = "",
   id = "",
 }) => {

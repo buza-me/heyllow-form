@@ -1,4 +1,5 @@
 .textarea__content {
+  font-family: var(--font-family);
   background-color: var(--input-background-color);
   border-radius: var(--border-radius);
   font-size: var(--font-size-large);
@@ -13,6 +14,22 @@
 
 .textarea__content::placeholder {
   font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+.textarea__content::-webkit-input-placeholder {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+.textarea__content::-moz-placeholder {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+}
+
+.textarea__content::-ms-input-placeholder {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
 }
 
 @media screen and (max-width: 415px) {
